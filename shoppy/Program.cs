@@ -6,24 +6,43 @@ using System.Threading.Tasks;
 
 namespace shoppy
 {
+    public class SampleEventArgs
+    {
+        public SampleEventArgs(string s) { Text = s; }
+        public String Text
+        {
+            get;
+            private set;
+        } // readonly
+    }
+
     class Program
     {
 
-        public delegate void hope(string s);
+        public delegate void HappyHandler(object sender, SampleEventArgs e);
+        public event HappyHandler day;
 
-        public event hope day;
+        public void happy(object sender, SampleEventArgs e)
+        {
+ 
+        }
+         static void Main(string[] args)
+        {
 
+            Program test = new Program();
+            //test.day += new HappyHandle;
+            //test.day(test, new SampleEventArgs("t10"));
+            //test.Main2();
+        }
 
-        static void Main(string[] args)
+        public void Main2()
         {
             string user;
             string pass ;
             bool stop = false;
             Console.WriteLine("Press 1 for login \nPress 2 for Startpage");
-            Program test = new Program();
-            test.day += test.day;
 
-      // anonamuse class
+           // anonamuse class
             var name = new [] { new { test = "a1",set = "a2" } ,new{ test= "b1",set = "b2"}};
 
            // name[1].test
@@ -35,9 +54,8 @@ namespace shoppy
             username.Add("mark");
 
             int [] i = new int [10];
-           
-            
 
+            List<medarbejder> test = new 
           
             List<string> password = new List<string>();
             password.Add("1234");
@@ -52,6 +70,7 @@ namespace shoppy
             switch (input.Key)
             {
                 case ConsoleKey.D1:
+                    
                     Console.WriteLine("Welcome to the login site\n");
                     Console.WriteLine("Please Input Username");
                     user = Console.ReadLine();
@@ -86,11 +105,14 @@ namespace shoppy
             Console.ReadKey();
         }
 
-        public void happy(string s)
+      class medarbejder
         {
-
+            string fornavn;
+            string efternavn;
+            int id;
+            List<string> tlf;
         }
-
+        static List<medarbejder> = new{}
      
     }
 }
